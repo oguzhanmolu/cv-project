@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
-import Personal from './components/CVForm/Personal';
+import Main from './components/Main';
+import Footer from './components/Footer';
 
 class App extends Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class App extends Component {
     return (
       <>
         <Header />
+        <Main />
+        <Footer />
       </>
     );
   }

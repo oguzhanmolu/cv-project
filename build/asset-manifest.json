@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/static/js/main.cbfe1389.js",
+    "static/media/cv-icon.png": "/static/media/cv-icon.f63b08f01a490bafa747.png",
+    "index.html": "/index.html",
+    "main.cbfe1389.js.map": "/static/js/main.cbfe1389.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.cbfe1389.js"
+  ]
+}
