@@ -17,8 +17,8 @@ const Main = () => {
 };
 
 const MainWrapper = styled.div`
-  margin: 0 150px 0 150px;
-
+  display: flex;
+  justify-content: center;
   @media (max-width: 1600px) {
     display: flex;
     flex-direction: column;
@@ -27,7 +27,9 @@ const MainWrapper = styled.div`
 `;
 
 const InputWrapper = styled.div`
+  background-color: #f8f8f8;
   width: 800px;
+  margin: 50px 25px 50px 25px;
   padding: 1rem;
 `;
 

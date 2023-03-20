@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
 
 .Section__Title{
   font-size: 2rem;
+  font-weight: bold;
   margin: 25px 0 10px 0;
 }
 
@@ -25,7 +26,7 @@ section>*{
   text-align: center;
 }
 
-input,textarea{
+input, textarea{
   padding: 5px;
   margin-top: 5px;
 }

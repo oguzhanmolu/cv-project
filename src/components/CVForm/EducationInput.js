@@ -9,10 +9,10 @@ class EducationInput extends Component {
     return (
       <section className='Section__Wrapper'>
         <span className='Section__Title'>Education</span>
-        <input placeholder='Program'></input>
-        <input placeholder='University'></input>
-        <input placeholder='From'></input>
-        <input placeholder='To'></input>
+        <input name='educationProgram' placeholder='Program'></input>
+        <input name='educationUniversity' placeholder='University'></input>
+        <input name='educationFrom' placeholder='From'></input>
+        <input name='educationTo' placeholder='To'></input>
       </section>
     );
   }
