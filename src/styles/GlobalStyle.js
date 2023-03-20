@@ -8,6 +8,29 @@ const GlobalStyle = createGlobalStyle`
     word-wrap: break-word;
   font-family: 'Montserrat', sans-serif;
 
-}`;
+}
+
+.Section__Title{
+  font-size: 2rem;
+  margin: 25px 0 10px 0;
+}
+
+section>*{
+  font-size: 1.5rem;
+}
+
+.Section__Wrapper{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+input,textarea{
+  padding: 5px;
+  margin-top: 5px;
+}
+
+
+`;
 
 export default GlobalStyle;
