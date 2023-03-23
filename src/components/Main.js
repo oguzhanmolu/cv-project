@@ -1,16 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import PersonalInput from './CVForm/PersonalInput';
-import EducationInput from './CVForm/EducationInput';
-import ExperienceInput from './CVForm/ExperienceInput';
+import CVForm from './CVForm/CVForm';
 
 const Main = () => {
   return (
     <MainWrapper>
       <InputWrapper>
-        <PersonalInput />
-        <EducationInput />
-        <ExperienceInput />
+        <CVForm />
       </InputWrapper>
     </MainWrapper>
   );
