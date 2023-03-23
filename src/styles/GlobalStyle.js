@@ -10,10 +10,16 @@ const GlobalStyle = createGlobalStyle`
 
 }
 
-.Section__Title{
+#First__Section__Title{
+  margin-bottom: 5px;
   font-size: 2rem;
   font-weight: bold;
-  margin: 25px 0 10px 0;
+}
+
+.Section__Title{
+  margin: 30px 0 5px 0;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 section>*{
@@ -30,8 +36,6 @@ input, textarea{
   padding: 5px;
   margin-top: 5px;
 }
-
-
 `;
 
 export default GlobalStyle;

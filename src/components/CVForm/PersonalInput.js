@@ -12,9 +12,14 @@ const PersonalInput = ({
     setStateFunction(event.target.value);
   };
 
+  const test = (e) => {
+    e.preventDefault();
+    console.log('test');
+  };
+
   return (
     <section className='Section__Wrapper'>
-      <span className='Section__Title'>Personal</span>
+      <span id='First__Section__Title'>Personal</span>
 
       <input
         onChange={(e) => setInputState(e, setName)}
@@ -60,6 +65,8 @@ const PersonalInput = ({
         maxLength='300'
         placeholder='Description...'
       />
+
+      <input id='input-img' type='file' accept='image/*'></input>
     </section>
   );
 };
