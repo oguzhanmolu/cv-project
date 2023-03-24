@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import placeholderImg from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.png';
+import placeholderImg from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.jpg';
 
 const PersonalPreview = ({
   name,
@@ -13,36 +13,69 @@ const PersonalPreview = ({
     <PersonalWrapper>
       <PortraitPlaceholder src={placeholderImg} />
       <NameTitleGroup>
-        <NamePreview>{name}</NamePreview>
-        <span>{title}</span>
+        <Name>{name}</Name>
+        <h2>{title}</h2>
       </NameTitleGroup>
-      <h1>{phone}</h1>
-      <h1>{email}</h1>
-      <h1>{address}</h1>
-      <h1>{description}</h1>
+
+      <DetailsGroup>
+        <IconGroup>
+          <i className='fa-solid fa-phone'></i>
+          <span>{phone}</span>
+        </IconGroup>
+
+        <IconGroup>
+          <i className='fa-solid fa-envelope'></i>
+          <span>{email}</span>
+        </IconGroup>
+
+        <IconGroup>
+          <i className='fa-solid fa-location-dot'></i>
+          <span>{address}</span>
+        </IconGroup>
+      </DetailsGroup>
     </PersonalWrapper>
   );
 };
 
+const PersonalWrapper = styled.div`
+  display: flex;
+  gap: 25px;
+  justify-content: space-between;
+  border-bottom: 5px solid #81aebb;
+`;
+
 const PortraitPlaceholder = styled.img`
-  height: 150px;
+  height: 175px;
+  width: 125px;
   margin-bottom: 25px;
 `;
 
-const PersonalWrapper = styled.div`
-  display: flex;
-  border-bottom: 5px solid #81aebb;
+const Name = styled.h1`
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  font-size: 3rem;
+  color: #195c70;
 `;
 
 const NameTitleGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 20px;
-  font-size: 2.25rem;
+  margin-bottom: 25px;
+  gap: 10px;
+  max-width: 500px;
+  font-size: 1.5rem;
 `;
 
-const NamePreview = styled.span`
-  font-size: 3rem;
+const DetailsGroup = styled.div`
+  margin: 25px 0 auto auto;
+  font-size: 1.25rem;
+  font-weight: bold;
+`;
+
+const IconGroup = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
 `;
 
 export default PersonalPreview;

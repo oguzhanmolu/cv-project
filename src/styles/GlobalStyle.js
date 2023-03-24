@@ -9,7 +9,6 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Montserrat', sans-serif;
 
 }
-
 #First__Section__Title{
   margin-bottom: 5px;
   font-size: 2rem;

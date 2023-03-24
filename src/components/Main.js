@@ -8,12 +8,12 @@ import EducationPreview from './CVPreview/EducationPreview';
 import ExperiencePreview from './CVPreview/ExperiencePreview';
 
 const Main = () => {
-  const [name, setName] = useState('');
-  const [title, setTitle] = useState('');
-  const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [address, setAddress] = useState('');
-  const [description, setDescription] = useState('');
+  const [name, setName] = useState('John Smith');
+  const [title, setTitle] = useState('React Developer');
+  const [phone, setPhone] = useState('+(44) 1234-9999');
+  const [email, setEmail] = useState('johnsmith@gmail.com');
+  const [address, setAddress] = useState('London, UK');
+  const [description, setDescription] = useState('Description');
 
   return (
     <MainWrapper>
@@ -51,7 +51,8 @@ const Main = () => {
 const MainWrapper = styled.div`
   display: flex;
   justify-content: center;
-  @media (max-width: 1600px) {
+
+  @media (max-width: 1800px) {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -60,14 +61,14 @@ const MainWrapper = styled.div`
 
 const InputWrapper = styled.div`
   background-color: #f8f8f8;
-  width: 800px;
+  width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;
 `;
 
 const PreviewWrapper = styled.div`
   background-color: #f8f8f8;
-  width: 800px;
+  width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;
 `;
