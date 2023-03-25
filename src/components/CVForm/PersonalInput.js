@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 const PersonalInput = ({
+  setInputState,
   setName,
   setTitle,
   setPhone,
@@ -8,15 +9,6 @@ const PersonalInput = ({
   setAddress,
   setDescription,
 }) => {
-  const setInputState = (event, setStateFunction) => {
-    setStateFunction(event.target.value);
-  };
-
-  const test = (e) => {
-    e.preventDefault();
-    console.log('test');
-  };
-
   return (
     <section className='Section__Wrapper'>
       <span id='First__Section__Title'>Personal</span>

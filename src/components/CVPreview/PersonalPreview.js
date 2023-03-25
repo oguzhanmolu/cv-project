@@ -10,30 +10,37 @@ const PersonalPreview = ({
   description,
 }) => {
   return (
-    <PersonalWrapper>
-      <PortraitPlaceholder src={placeholderImg} />
-      <NameTitleGroup>
-        <Name>{name}</Name>
-        <h2>{title}</h2>
-      </NameTitleGroup>
+    <>
+      <PersonalWrapper>
+        <PortraitPlaceholder src={placeholderImg} />
+        <NameTitleGroup>
+          <Name>{name}</Name>
+          <h2>{title}</h2>
+        </NameTitleGroup>
 
-      <DetailsGroup>
-        <IconGroup>
-          <i className='fa-solid fa-phone'></i>
-          <span>{phone}</span>
-        </IconGroup>
+        <DetailsGroup>
+          <IconGroup>
+            <i className='fa-solid fa-phone'></i>
+            <span>{phone}</span>
+          </IconGroup>
 
-        <IconGroup>
-          <i className='fa-solid fa-envelope'></i>
-          <span>{email}</span>
-        </IconGroup>
+          <IconGroup>
+            <i className='fa-solid fa-envelope'></i>
+            <span>{email}</span>
+          </IconGroup>
 
-        <IconGroup>
-          <i className='fa-solid fa-location-dot'></i>
-          <span>{address}</span>
-        </IconGroup>
-      </DetailsGroup>
-    </PersonalWrapper>
+          <IconGroup>
+            <i className='fa-solid fa-location-dot'></i>
+            <span>{address}</span>
+          </IconGroup>
+        </DetailsGroup>
+      </PersonalWrapper>
+
+      <div>
+        <DescriptionTitle>Description</DescriptionTitle>
+        <DescriptionText>{description}</DescriptionText>
+      </div>
+    </>
   );
 };
 
@@ -76,6 +83,21 @@ const IconGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
+`;
+
+const DescriptionTitle = styled.span`
+  display: inline-block;
+  margin-top: 20px;
+  padding: 5px;
+  color: #195c70;
+  border-bottom: 5px solid #81aebb;
+  font-size: 1.75rem;
+  font-weight: bold;
+`;
+
+const DescriptionText = styled.p`
+  margin-top: 10px;
+  font-size: 1.25rem;
 `;
 
 export default PersonalPreview;
