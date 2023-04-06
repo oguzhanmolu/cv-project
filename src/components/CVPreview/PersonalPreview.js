@@ -1,15 +1,16 @@
 import styled from 'styled-components';
 import placeholderImg from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.jpg';
+import PreviewTitle from '../Utils/PreviewTitle';
 
 const PersonalPreview = ({ personalInfo }) => {
   return (
     <>
       <PersonalWrapper>
         <PortraitPlaceholder src={placeholderImg} />
-        <NameTitleGroup>
-          <Name>{personalInfo.name}</Name>
+        <div>
+          <NameText>{personalInfo.name}</NameText>
           <h2>{personalInfo.title}</h2>
-        </NameTitleGroup>
+        </div>
 
         <DetailsGroup>
           <IconGroup>
@@ -29,18 +30,17 @@ const PersonalPreview = ({ personalInfo }) => {
         </DetailsGroup>
       </PersonalWrapper>
 
-      <div>
-        <DescriptionTitle>Description</DescriptionTitle>
+      <>
+        <PreviewTitle title='Description' />
         <DescriptionText>{personalInfo.description}</DescriptionText>
-      </div>
+      </>
     </>
   );
 };
 
 const PersonalWrapper = styled.div`
   display: flex;
-  gap: 25px;
-  justify-content: space-between;
+  gap: 15px;
   border-bottom: 5px solid #81aebb;
 `;
 
@@ -48,43 +48,26 @@ const PortraitPlaceholder = styled.img`
   height: 175px;
   width: 125px;
   margin-bottom: 25px;
+  border: 5px solid #81aebb;
+  background-color: #81aebb;
 `;
 
-const Name = styled.h1`
+const NameText = styled.h2`
   letter-spacing: 4px;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: #195c70;
 `;
 
-const NameTitleGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 25px;
-  gap: 10px;
-  max-width: 500px;
-  font-size: 1.5rem;
-`;
-
 const DetailsGroup = styled.div`
-  margin: 25px 0 auto auto;
-  font-size: 1.25rem;
-  font-weight: bold;
+  margin: 0 0 auto auto;
 `;
 
 const IconGroup = styled.div`
   display: flex;
   align-items: center;
   gap: 10px;
-`;
-
-const DescriptionTitle = styled.span`
-  display: inline-block;
-  margin-top: 20px;
-  padding: 5px;
-  color: #195c70;
-  border-bottom: 5px solid #81aebb;
-  font-size: 1.75rem;
+  margin-top: 5px;
   font-weight: bold;
 `;
 

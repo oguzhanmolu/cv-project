@@ -1,7 +1,7 @@
 import { Children } from 'react';
 import styled from 'styled-components';
 
-const InputSection = ({ title, children }) => {
+const Section = ({ title, children }) => {
   return (
     <SectionWrapper>
       <SectionTitle>{title}</SectionTitle>
@@ -22,4 +22,4 @@ const SectionTitle = styled.span`
   font-weight: bold;
 `;
 
-export default InputSection;
+export default Section;

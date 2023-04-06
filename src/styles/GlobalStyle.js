@@ -14,6 +14,8 @@ input, textarea{
   padding: 5px;
   margin-top: 5px;
 }
+
+h2{font-size:1.75rem}
 `;
 
 export default GlobalStyle;

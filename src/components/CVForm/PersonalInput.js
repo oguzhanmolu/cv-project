@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import InputSection from '../Utils/InputSection';
+import Section from '../Utils/Section';
 
 const PersonalInput = ({ onChangePersonal }) => {
   return (
-    <InputSection title='Personal'>
+    <Section title='Personal'>
       <input
         onChange={(e) => onChangePersonal(e)}
         name='name'
@@ -50,7 +50,7 @@ const PersonalInput = ({ onChangePersonal }) => {
       />
 
       <input id='input-img' type='file' accept='image/*'></input>
-    </InputSection>
+    </Section>
   );
 };
 
