@@ -1,44 +1,37 @@
 import styled from 'styled-components';
 import placeholderImg from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.jpg';
 
-const PersonalPreview = ({
-  name,
-  title,
-  phone,
-  email,
-  address,
-  description,
-}) => {
+const PersonalPreview = ({ personalInfo }) => {
   return (
     <>
       <PersonalWrapper>
         <PortraitPlaceholder src={placeholderImg} />
         <NameTitleGroup>
-          <Name>{name}</Name>
-          <h2>{title}</h2>
+          <Name>{personalInfo.name}</Name>
+          <h2>{personalInfo.title}</h2>
         </NameTitleGroup>
 
         <DetailsGroup>
           <IconGroup>
             <i className='fa-solid fa-phone'></i>
-            <span>{phone}</span>
+            <span>{personalInfo.phone}</span>
           </IconGroup>
 
           <IconGroup>
             <i className='fa-solid fa-envelope'></i>
-            <span>{email}</span>
+            <span>{personalInfo.email}</span>
           </IconGroup>
 
           <IconGroup>
             <i className='fa-solid fa-location-dot'></i>
-            <span>{address}</span>
+            <span>{personalInfo.address}</span>
           </IconGroup>
         </DetailsGroup>
       </PersonalWrapper>
 
       <div>
         <DescriptionTitle>Description</DescriptionTitle>
-        <DescriptionText>{description}</DescriptionText>
+        <DescriptionText>{personalInfo.description}</DescriptionText>
       </div>
     </>
   );
