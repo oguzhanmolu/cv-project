@@ -5,19 +5,28 @@ import CVForm from './CVForm/CVForm';
 import CVPreview from './CVPreview/CVPreview';
 
 const Main = () => {
-  const [CV, setCV] = useState(emptyCV);
+  const [cv, setCV] = useState(emptyCV);
 
   useEffect((prev) => {
-    console.log(CV);
+    console.log(cv);
   }, []);
+
+  const handleOnChangePersonal = (e) => {
+    const { name, value } = e.target;
+
+    setCV((prevState) => ({
+      ...prevState,
+      personalInfo: { ...prevState.personalInfo, [name]: value },
+    }));
+  };
 
   return (
     <MainWrapper>
       <InputWrapper>
-        <CVForm />
+        <CVForm cv={cv} onChangePersonal={handleOnChangePersonal} />
       </InputWrapper>
       <PreviewWrapper>
-        <CVPreview CV={CV} />
+        <CVPreview cv={cv} />
       </PreviewWrapper>
     </MainWrapper>
   );

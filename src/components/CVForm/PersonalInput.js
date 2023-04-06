@@ -1,65 +1,56 @@
 import React, { Component } from 'react';
+import InputSection from '../Utils/InputSection';
 
-const PersonalInput = ({
-  setInputState,
-  setName,
-  setTitle,
-  setPhone,
-  setEmail,
-  setAddress,
-  setDescription,
-}) => {
+const PersonalInput = ({ onChangePersonal }) => {
   return (
-    <section className='Section__Wrapper'>
-      <span id='First__Section__Title'>Personal</span>
-
+    <InputSection title='Personal'>
       <input
-        onChange={(e) => setInputState(e, setName)}
-        name='personalName'
+        onChange={(e) => onChangePersonal(e)}
+        name='name'
         type='text'
         placeholder='Name'
       ></input>
 
       <input
-        onChange={(e) => setInputState(e, setTitle)}
-        name='personalTitle'
+        onChange={(e) => onChangePersonal(e)}
+        name='title'
         type='text'
         placeholder='Title'
       ></input>
 
       <input
-        onChange={(e) => setInputState(e, setPhone)}
-        name='personalPhone'
+        onChange={(e) => onChangePersonal(e)}
+        name='phone'
         type='text'
         placeholder='Phone'
       ></input>
 
       <input
-        onChange={(e) => setInputState(e, setEmail)}
-        name='personalEmail'
+        onChange={(e) => onChangePersonal(e)}
+        name='email'
         type='text'
         placeholder='Email'
       ></input>
 
       <input
-        onChange={(e) => setInputState(e, setAddress)}
-        name='personalAddress'
+        onChange={(e) => onChangePersonal(e)}
+        name='address'
         type='text'
         placeholder='Address'
       ></input>
 
       <textarea
         onChange={(e) => {
-          setInputState(e, setDescription);
+          onChangePersonal(e);
         }}
-        name='personalDescription'
+        name='description'
         rows={5}
         maxLength='300'
         placeholder='Description...'
       />
 
       <input id='input-img' type='file' accept='image/*'></input>
-    </section>
+    </InputSection>
   );
 };
 

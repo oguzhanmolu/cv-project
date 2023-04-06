@@ -9,29 +9,8 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'Montserrat', sans-serif;
 
 }
-#First__Section__Title{
-  margin-bottom: 5px;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.Section__Title{
-  margin: 30px 0 5px 0;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-section>*{
-  font-size: 1.5rem;
-}
-
-.Section__Wrapper{
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-}
-
 input, textarea{
+  font-size: 1.5rem;
   padding: 5px;
   margin-top: 5px;
 }
