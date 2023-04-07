@@ -11,7 +11,8 @@ const Main = () => {
     console.log(cv);
   }, []);
 
-  const handleOnChangePersonal = (e) => {
+  // Personal Input onChange
+  const handleChangePersonal = (e) => {
     const { name, value } = e.target;
 
     setCV((prevState) => ({
@@ -20,10 +21,23 @@ const Main = () => {
     }));
   };
 
+  const handleChangeEducation = () => {
+    console.log('test');
+  };
+
+  const handleAddEducation = () => {
+    console.log('test');
+  };
+
   return (
     <MainWrapper>
       <InputWrapper>
-        <CVForm cv={cv} onChangePersonal={handleOnChangePersonal} />
+        <CVForm
+          cv={cv}
+          onChangePersonal={handleChangePersonal}
+          onChangeEducation={handleChangeEducation}
+          onAddEducation={handleAddEducation}
+        />
       </InputWrapper>
       <PreviewWrapper>
         <CVPreview cv={cv} />
@@ -44,14 +58,14 @@ const MainWrapper = styled.div`
 `;
 
 const InputWrapper = styled.div`
-  background-color: #f8f8f8;
   width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;
+  background-color: #f0f0f0;
 `;
 
 const PreviewWrapper = styled.div`
-  background-color: #f8f8f8;
+  background-color: #f0f0f0;
   width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;

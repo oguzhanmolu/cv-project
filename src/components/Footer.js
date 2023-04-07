@@ -14,9 +14,9 @@ export default Footer;
 
 const FooterIcon = styled.i`
   padding: 10px;
-  font-size: 2.5rem;
+  font-size: 3rem;
   animation-duration: 10s;
-  color: black;
+  color: rgb(40, 40, 40);
   cursor: pointer;
 `;
 

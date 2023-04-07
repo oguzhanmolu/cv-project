@@ -1,14 +1,24 @@
 import styled from 'styled-components';
-import PersonalInput from './PersonalInput';
-import EducationInput from './EducationInput';
-import ExperienceInput from './ExperienceInput';
+import PersonalInput from './Personal';
+import EducationInput from './Education';
+import ExperienceInput from './Experience';
 
-const CVForm = ({ cv, onChangePersonal }) => {
+const CVForm = ({
+  cv,
+  onChangePersonal,
+  onChangeEducation,
+  onAddEducation,
+}) => {
   return (
     <FormWrapper>
       <PersonalInput
         personalInfo={cv.personalInfo}
         onChangePersonal={onChangePersonal}
+      />
+      <EducationInput
+        educationInfo={cv.education}
+        onChangeEducation={onChangeEducation}
+        onAdd={onAddEducation}
       />
     </FormWrapper>
   );
