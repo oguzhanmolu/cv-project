@@ -8,6 +8,7 @@ const CVForm = ({
   onChangePersonal,
   onChangeEducation,
   onAddEducation,
+  onDeleteEducation,
 }) => {
   return (
     <FormWrapper>
@@ -18,7 +19,8 @@ const CVForm = ({
       <EducationInput
         educationInfo={cv.education}
         onChangeEducation={onChangeEducation}
-        onAdd={onAddEducation}
+        onAddEducation={onAddEducation}
+        onDeleteEducation={onDeleteEducation}
       />
     </FormWrapper>
   );

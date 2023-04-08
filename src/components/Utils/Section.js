@@ -19,7 +19,6 @@ const SectionWrapper = styled.section`
 const SectionTitle = styled.span`
   margin-bottom: 5px;
   font-size: 2rem;
-  font-weight: bold;
 `;
 
 export default Section;

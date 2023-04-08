@@ -1,6 +1,11 @@
 import Button from '../Utils/Button';
 
-const EducationItem = ({ educationItem, id, onChangeAction }) => {
+const EducationItem = ({
+  id,
+  educationItem,
+  onChangeAction,
+  onDeleteEducation,
+}) => {
   return (
     <>
       <input
@@ -42,7 +47,8 @@ const EducationItem = ({ educationItem, id, onChangeAction }) => {
         placeholder='To'
         value={educationItem.to}
       ></input>
-      <Button text='Delete' />
+
+      <Button text='Delete' onClickAction={() => onDeleteEducation(id)} />
     </>
   );
 };

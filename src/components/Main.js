@@ -49,29 +49,40 @@ const Main = () => {
         {
           id: uuidv4(),
           uniName: '',
-          city: 'TestCity',
-          degree: 'Master',
-          subject: 'Computer Programming',
-          from: '2021',
-          to: '2023',
+          city: '',
+          degree: '',
+          subject: '',
+          from: '',
+          to: '',
         },
       ],
     }));
   };
 
+  // Delete education section
+  const handleDeleteEducation = (id) => {
+    setCV((prevState) => {
+      const currentState = prevState.education.filter(
+        (educationItem) => educationItem.id !== id
+      );
+      return { ...prevState, education: [...currentState] };
+    });
+  };
+
   return (
     <MainWrapper>
-      <InputWrapper>
+      <ContentWrapper>
         <CVForm
           cv={cv}
           onChangePersonal={handleChangePersonal}
           onChangeEducation={handleChangeEducation}
           onAddEducation={handleAddEducation}
+          onDeleteEducation={handleDeleteEducation}
         />
-      </InputWrapper>
-      <PreviewWrapper>
+      </ContentWrapper>
+      <ContentWrapper>
         <CVPreview cv={cv} />
-      </PreviewWrapper>
+      </ContentWrapper>
     </MainWrapper>
   );
 };
@@ -87,18 +98,11 @@ const MainWrapper = styled.div`
   }
 `;
 
-const InputWrapper = styled.div`
+const ContentWrapper = styled.div`
   width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;
   background-color: #f0f0f0;
-`;
-
-const PreviewWrapper = styled.div`
-  background-color: #f0f0f0;
-  width: 900px;
-  margin: 50px 25px 50px 25px;
-  padding: 1rem;
 `;
 
 export default Main;
