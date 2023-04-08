@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import placeholderPhoto from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.jpg';
 
 const emptyCV = {
   personalInfo: {
@@ -8,6 +9,7 @@ const emptyCV = {
     phone: '',
     email: '',
     description: '',
+    photo: placeholderPhoto,
   },
   education: [
     {

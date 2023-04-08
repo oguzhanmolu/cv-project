@@ -49,7 +49,12 @@ const PersonalInput = ({ onChangePersonal }) => {
         placeholder='Description...'
       />
 
-      <input id='input-img' type='file' accept='image/*'></input>
+      <input
+        name='photo'
+        type='file'
+        accept='image/*'
+        onChange={(e) => onChangePersonal(e)}
+      ></input>
     </Section>
   );
 };

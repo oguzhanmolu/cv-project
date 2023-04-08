@@ -1,12 +1,11 @@
 import styled from 'styled-components';
-import placeholderImg from '/home/oguzhanmolu/repos/cv-project/src/assets/portrait-placeholder.jpg';
 import PreviewTitle from '../Utils/PreviewTitle';
 
 const PersonalPreview = ({ personalInfo }) => {
   return (
     <>
       <PersonalWrapper>
-        <PortraitPlaceholder src={placeholderImg} />
+        <Photo src={personalInfo.photo} />
         <div>
           <NameText>{personalInfo.name}</NameText>
           <h2>{personalInfo.title}</h2>
@@ -44,12 +43,10 @@ const PersonalWrapper = styled.div`
   border-bottom: 5px solid #81aebb;
 `;
 
-const PortraitPlaceholder = styled.img`
+const Photo = styled.img`
   height: 175px;
   width: 125px;
   margin-bottom: 25px;
-  border: 5px solid #81aebb;
-  background-color: #81aebb;
 `;
 
 const NameText = styled.h2`

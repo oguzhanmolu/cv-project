@@ -4,23 +4,43 @@ import emptyCV from './Utils/EmptyCV';
 import CVForm from './CVForm/CVForm';
 import CVPreview from './CVPreview/CVPreview';
 import { v4 as uuidv4 } from 'uuid';
-import ExperienceItem from './CVForm/ExperienceItem';
 
 const Main = () => {
   const [cv, setCV] = useState(emptyCV);
 
-  useEffect((prev) => {
+  useEffect(() => {
     console.log(cv);
   });
 
   // Update cv state with personal inputs
   const handleChangePersonal = (e) => {
-    const { name, value } = e.target;
+    const { name, value, type } = e.target;
+
+    if (type === 'file') {
+      handlePhotoUpload(e);
+      return;
+    }
 
     setCV((prevState) => ({
       ...prevState,
       personalInfo: { ...prevState.personalInfo, [name]: value },
     }));
+  };
+
+  const handlePhotoUpload = (e) => {
+    const { name } = e.target;
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCV((prevState) => ({
+        ...prevState,
+        personalInfo: { ...prevState.personalInfo, [name]: reader.result },
+      }));
+    };
+    reader.readAsDataURL(file);
+    console.log(reader);
   };
 
   // Update cv state with education inputs
