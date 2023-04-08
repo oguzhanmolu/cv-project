@@ -15,15 +15,15 @@ const IconGroup = styled.img`
   height: 60px;
 `;
 
-const HeaderWrapper = styled.div`
+const HeaderWrapper = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 10px;
-  background-color: #323232;
+  padding: 15px;
+  background-color: rgb(40, 40, 40);
   color: white;
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: bold;
 `;
 

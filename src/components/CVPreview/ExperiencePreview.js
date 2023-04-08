@@ -1,54 +1,19 @@
 import styled from 'styled-components';
+import PreviewTitle from '../Utils/PreviewTitle';
+import ExperienceItem from './ExperienceItem';
 
-const ExperiencePreview = ({
-  companyPosition,
-  companyName,
-  companyLocation,
-  companyEntrance,
-  companyLeft,
-  companyNotes,
-}) => {
+const ExperiencePreview = ({ experienceInfo }) => {
+  const experienceItems = experienceInfo.map((experienceItem) => {
+    return (
+      <ExperienceItem experienceItem={experienceItem} key={experienceItem.id} />
+    );
+  });
   return (
     <>
-      <ExperienceTitle>Experience</ExperienceTitle>
-      <ExperienceGroup>
-        <BoldText>
-          <span>{companyEntrance}</span>-<span>{companyLeft}</span>
-        </BoldText>
-        <NormalText>
-          <span>{companyPosition}</span> at <span>{companyName}</span>,{' '}
-          <span>{companyLocation}</span>
-        </NormalText>
-        <span>Note: {companyNotes}</span>
-      </ExperienceGroup>
+      <PreviewTitle title='Experience' />
+      {experienceItems}
     </>
   );
 };
-
-const ExperienceTitle = styled.span`
-  display: inline-block;
-  margin-top: 20px;
-  padding: 5px;
-  color: #195c70;
-  border-bottom: 5px solid #81aebb;
-  font-size: 2rem;
-  font-weight: bold;
-`;
-
-const ExperienceGroup = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: 5px;
-  gap: 5px;
-  font-size: 1.15rem;
-`;
-const BoldText = styled.div`
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-top: 5px;
-`;
-const NormalText = styled.div`
-  font-size: 1.25rem;
-`;
 
 export default ExperiencePreview;

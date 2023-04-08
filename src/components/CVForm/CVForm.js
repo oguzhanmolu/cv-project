@@ -9,6 +9,9 @@ const CVForm = ({
   onChangeEducation,
   onAddEducation,
   onDeleteEducation,
+  onChangeExperience,
+  onAddExperience,
+  onDeleteExperience,
 }) => {
   return (
     <FormWrapper>
@@ -21,6 +24,12 @@ const CVForm = ({
         onChangeEducation={onChangeEducation}
         onAddEducation={onAddEducation}
         onDeleteEducation={onDeleteEducation}
+      />
+      <ExperienceInput
+        experienceInfo={cv.experience}
+        onChangeExperience={onChangeExperience}
+        onAddExperience={onAddExperience}
+        onDeleteExperience={onDeleteExperience}
       />
     </FormWrapper>
   );

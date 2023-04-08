@@ -1,54 +1,27 @@
-import styled from 'styled-components';
+import ExperienceItem from './ExperienceItem';
+import Section from '../Utils/Section';
+import Button from '../Utils/Button';
 
 const ExperienceInput = ({
-  setInputState,
-  setCompanyPosition,
-  setCompanyName,
-  setCompanyLocation,
-  setCompanyEntrance,
-  setCompanyLeft,
-  setCompanyNotes,
+  experienceInfo,
+  onChangeExperience,
+  onAddExperience,
+  onDeleteExperience,
 }) => {
+  const experienceItems = experienceInfo.map((experienceItem) => (
+    <ExperienceItem
+      experienceItem={experienceItem}
+      key={experienceItem.id}
+      id={experienceItem.id}
+      onChangeAction={onChangeExperience}
+      onDeleteExperience={onDeleteExperience}
+    />
+  ));
   return (
-    <section className='Section__Wrapper'>
-      <span className='Section__Title'>Experience</span>
-      <input
-        onChange={(e) => setInputState(e, setCompanyPosition)}
-        name='experiencePosition'
-        placeholder='Position'
-      ></input>
-
-      <input
-        onChange={(e) => setInputState(e, setCompanyName)}
-        name='experienceCompany'
-        placeholder='Company'
-      ></input>
-
-      <input
-        onChange={(e) => setInputState(e, setCompanyLocation)}
-        name='experienceCity'
-        placeholder='City'
-      ></input>
-
-      <input
-        onChange={(e) => setInputState(e, setCompanyEntrance)}
-        name='experienceFrom'
-        placeholder='From'
-      ></input>
-
-      <input
-        onChange={(e) => setInputState(e, setCompanyLeft)}
-        name='experienceTo'
-        placeholder='To'
-      ></input>
-
-      <textarea
-        onChange={(e) => setInputState(e, setCompanyNotes)}
-        rows={3}
-        maxLength='150'
-        placeholder='Notes...'
-      ></textarea>
-    </section>
+    <Section title='Experience'>
+      {experienceItems}
+      <Button text='Add' onClickAction={onAddExperience} />
+    </Section>
   );
 };
 

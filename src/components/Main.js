@@ -4,15 +4,16 @@ import emptyCV from './Utils/EmptyCV';
 import CVForm from './CVForm/CVForm';
 import CVPreview from './CVPreview/CVPreview';
 import { v4 as uuidv4 } from 'uuid';
+import ExperienceItem from './CVForm/ExperienceItem';
 
 const Main = () => {
   const [cv, setCV] = useState(emptyCV);
 
   useEffect((prev) => {
     console.log(cv);
-  }, []);
+  });
 
-  // Personal input onChange
+  // Update cv state with personal inputs
   const handleChangePersonal = (e) => {
     const { name, value } = e.target;
 
@@ -22,11 +23,9 @@ const Main = () => {
     }));
   };
 
-  // Education input onChange
+  // Update cv state with education inputs
   const handleChangeEducation = (e, id) => {
     const { name, value } = e.target;
-    console.log(value);
-    console.log(cv);
 
     setCV((prevState) => {
       const currentState = prevState.education.map((educationItem) => {
@@ -40,7 +39,7 @@ const Main = () => {
     });
   };
 
-  // Add new education section
+  // Add education input section
   const handleAddEducation = () => {
     setCV((prevState) => ({
       ...prevState,
@@ -59,13 +58,49 @@ const Main = () => {
     }));
   };
 
-  // Delete education section
+  // Delete education input section
   const handleDeleteEducation = (id) => {
     setCV((prevState) => {
       const currentState = prevState.education.filter(
         (educationItem) => educationItem.id !== id
       );
       return { ...prevState, education: [...currentState] };
+    });
+  };
+
+  // Update cv state with experience inputs
+  const handleChangeExperience = (e, id) => {
+    const { name, value } = e.target;
+
+    setCV((prevState) => {
+      const currentState = prevState.experience.map((experienceItem) => {
+        if (experienceItem.id === id) {
+          return { ...experienceItem, [name]: value };
+        }
+        return experienceItem;
+      });
+      return { ...prevState, experience: [...currentState] };
+    });
+  };
+
+  // Add experience input section
+  const handleAddExperience = () => {
+    setCV((prevState) => ({
+      ...prevState,
+      experience: [
+        ...prevState.experience,
+        { id: uuidv4(), position: '', company: '', city: '', from: '', to: '' },
+      ],
+    }));
+  };
+
+  // Delete experience input section
+  const handleDeleteExperience = (id) => {
+    setCV((prevState) => {
+      const currentState = prevState.experience.filter(
+        (ExperienceItem) => ExperienceItem.id !== id
+      );
+      return { ...prevState, experience: [...currentState] };
     });
   };
 
@@ -78,6 +113,9 @@ const Main = () => {
           onChangeEducation={handleChangeEducation}
           onAddEducation={handleAddEducation}
           onDeleteEducation={handleDeleteEducation}
+          onChangeExperience={handleChangeExperience}
+          onAddExperience={handleAddExperience}
+          onDeleteExperience={handleDeleteExperience}
         />
       </ContentWrapper>
       <ContentWrapper>
@@ -87,7 +125,7 @@ const Main = () => {
   );
 };
 
-const MainWrapper = styled.div`
+const MainWrapper = styled.main`
   display: flex;
   justify-content: center;
 

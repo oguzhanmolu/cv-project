@@ -20,7 +20,7 @@ const FooterIcon = styled.i`
   cursor: pointer;
 `;
 
-const FooterWrapper = styled.section`
+const FooterWrapper = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
