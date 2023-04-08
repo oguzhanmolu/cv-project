@@ -13,12 +13,12 @@ const emptyCV = {
   education: [
     {
       id: uuidv4(),
-      uniName: 'University of London',
-      city: 'London',
-      degree: 'Master',
-      subject: 'Computer Programming',
-      from: '2015',
-      to: '2019',
+      uniName: '',
+      city: '',
+      degree: '',
+      subject: '',
+      from: '',
+      to: '',
     },
   ],
   experience: [
