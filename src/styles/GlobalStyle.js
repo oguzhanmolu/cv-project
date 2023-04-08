@@ -14,6 +14,10 @@ input, textarea{
   padding: 5px;
   margin-top: 5px;
 }
+button{
+  cursor: pointer;
+  border-style: none;
+}
 
 h2{font-size:1.75rem}
 `;

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import emptyCV from './Utils/EmptyCV';
 import CVForm from './CVForm/CVForm';
 import CVPreview from './CVPreview/CVPreview';
 import { v4 as uuidv4 } from 'uuid';
+import emptyCV from './Utils/EmptyCV';
+import exampleCV from './Utils/exampleCV';
 
 const Main = () => {
   const [cv, setCV] = useState(emptyCV);
@@ -27,6 +28,7 @@ const Main = () => {
     }));
   };
 
+  // Photo upload
   const handlePhotoUpload = (e) => {
     const { name } = e.target;
     const file = e.target.files[0];
@@ -124,9 +126,11 @@ const Main = () => {
     });
   };
 
+  // Load example CV
+  const loadExampleCV = () => setCV(exampleCV);
   return (
     <MainWrapper>
-      <ContentWrapper>
+      <InputWrapper>
         <CVForm
           cv={cv}
           onChangePersonal={handleChangePersonal}
@@ -136,8 +140,9 @@ const Main = () => {
           onChangeExperience={handleChangeExperience}
           onAddExperience={handleAddExperience}
           onDeleteExperience={handleDeleteExperience}
+          onLoadExampleCV={loadExampleCV}
         />
-      </ContentWrapper>
+      </InputWrapper>
       <ContentWrapper>
         <CVPreview cv={cv} />
       </ContentWrapper>
@@ -148,6 +153,7 @@ const Main = () => {
 const MainWrapper = styled.main`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
 
   @media (max-width: 1800px) {
     display: flex;
@@ -156,7 +162,17 @@ const MainWrapper = styled.main`
   }
 `;
 
+const InputWrapper = styled.div`
+  width: 900px;
+  margin: 50px 25px 50px 25px;
+  padding: 1rem;
+  background-color: #f0f0f0;
+`;
+
 const ContentWrapper = styled.div`
+  position: sticky;
+  top: 0;
+  height: 100vh;
   width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;

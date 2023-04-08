@@ -48,7 +48,11 @@ const EducationItem = ({
         value={educationItem.to}
       ></input>
 
-      <Button text='Delete' onClickAction={() => onDeleteEducation(id)} />
+      <Button
+        text='Delete'
+        onClickAction={() => onDeleteEducation(id)}
+        color={'rgb(40, 40, 40)'}
+      />
     </>
   );
 };

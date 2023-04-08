@@ -20,7 +20,11 @@ const ExperienceInput = ({
   return (
     <Section title='Experience'>
       {experienceItems}
-      <Button text='Add' onClickAction={onAddExperience} />
+      <Button
+        text='Add'
+        onClickAction={onAddExperience}
+        color={'rgb(40, 40, 40)'}
+      />
     </Section>
   );
 };

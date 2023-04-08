@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import PersonalInput from './Personal';
 import EducationInput from './Education';
 import ExperienceInput from './Experience';
+import Button from '../Utils/Button';
 
 const CVForm = ({
   cv,
@@ -12,9 +13,10 @@ const CVForm = ({
   onChangeExperience,
   onAddExperience,
   onDeleteExperience,
+  onLoadExampleCV,
 }) => {
   return (
-    <FormWrapper>
+    <InputWrapper>
       <PersonalInput
         personalInfo={cv.personalInfo}
         onChangePersonal={onChangePersonal}
@@ -31,13 +33,27 @@ const CVForm = ({
         onAddExperience={onAddExperience}
         onDeleteExperience={onDeleteExperience}
       />
-    </FormWrapper>
+      <ButtonWrapper>
+        <Button
+          text='Load Example CV'
+          color='green'
+          onClickAction={onLoadExampleCV}
+        />
+        <Button text='Generate PDF' color='#8B0000' />
+      </ButtonWrapper>
+    </InputWrapper>
   );
 };
 
-const FormWrapper = styled.div`
+const InputWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 25px;
+`;
+
+const ButtonWrapper = styled.div`
+  display: flex;
+  justify-content: center;
   gap: 25px;
 `;
 

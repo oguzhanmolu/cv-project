@@ -21,7 +21,11 @@ const EducationInput = ({
   return (
     <Section title='Education'>
       {educationItems}
-      <Button text='Add' onClickAction={onAddEducation} />
+      <Button
+        text='Add'
+        onClickAction={onAddEducation}
+        color={'rgb(40, 40, 40)'}
+      />
     </Section>
   );
 };

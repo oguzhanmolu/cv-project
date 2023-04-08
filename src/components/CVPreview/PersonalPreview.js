@@ -44,8 +44,8 @@ const PersonalWrapper = styled.div`
 `;
 
 const Photo = styled.img`
-  height: 175px;
-  width: 125px;
+  height: 240px;
+  width: 180px;
   margin-bottom: 25px;
 `;
 

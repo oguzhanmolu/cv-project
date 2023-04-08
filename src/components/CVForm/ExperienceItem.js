@@ -42,7 +42,11 @@ const ExperienceItem = ({
         value={experienceItem.to}
       ></input>
 
-      <Button text='Delete' onClickAction={() => onDeleteExperience(id)} />
+      <Button
+        text='Delete'
+        onClickAction={() => onDeleteExperience(id)}
+        color={'rgb(40, 40, 40)'}
+      />
     </>
   );
 };

@@ -22,7 +22,7 @@ const EducationItem = ({ educationItem }) => {
 const EducationWrapper = styled.div`
   display: flex;
   margin: 10px 0 0 25px;
-  gap: 25px;
+  gap: 50px;
   font-size: 1.15rem;
 `;
 
