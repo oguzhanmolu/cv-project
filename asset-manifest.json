@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.js": "/cv-project/static/js/main.f285381a.js",
+    "static/media/example-photo.png": "/cv-project/static/media/example-photo.58a5b6270c326be3daa5.png",
+    "static/media/cv-icon.png": "/cv-project/static/media/cv-icon.f63b08f01a490bafa747.png",
+    "index.html": "/cv-project/index.html",
+    "main.f285381a.js.map": "/cv-project/static/js/main.f285381a.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.f285381a.js"
+  ]
+}
