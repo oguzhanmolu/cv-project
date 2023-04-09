@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Simple footer with github icon and link to my github page
 const Footer = () => {
   return (
     <FooterWrapper>
@@ -10,7 +11,11 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+const FooterWrapper = styled.footer`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
 
 const FooterIcon = styled.i`
   padding: 10px;
@@ -20,8 +25,4 @@ const FooterIcon = styled.i`
   cursor: pointer;
 `;
 
-const FooterWrapper = styled.footer`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
+export default Footer;

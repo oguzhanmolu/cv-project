@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Create experience item section from props
 const ExperienceItem = ({ experienceItem }) => {
   return (
     <>

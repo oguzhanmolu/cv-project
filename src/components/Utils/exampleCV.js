@@ -9,7 +9,8 @@ const exampleCV = {
     phone: '+353 1234-9911',
     email: 'johnsmithnotme@gmail.com',
     description:
-      'Li lingues differe solmen in li grammatica, li pronunciation e li plu commun vocabules. Omnicos directe al desirabilite de un nov lingua franca: On refusa continuar payar custosi traductores.Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.',
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ex culpa cumque velit soluta, nobis recusandae. Ipsam minus eum dignissimos aliquam possimus iste eveniet similique, non, nulla eius maxime consectetur soluta atque debitis doloremque iure ipsum nisi illo aspernatur ducimus?',
+
     photo: examplePhoto,
   },
   education: [

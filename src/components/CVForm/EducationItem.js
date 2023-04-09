@@ -1,5 +1,6 @@
 import Button from '../Utils/Button';
 
+// Create Education input section from props
 const EducationItem = ({
   id,
   educationItem,

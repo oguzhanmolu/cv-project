@@ -7,7 +7,7 @@ const PreviewTitle = ({ title }) => {
 
 const TitleElement = styled.span`
   display: inline-flex;
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 5px;
   color: #195c70;
   border-bottom: 5px solid #81aebb;

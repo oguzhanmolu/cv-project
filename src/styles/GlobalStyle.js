@@ -17,6 +17,10 @@ input, textarea{
 button{
   cursor: pointer;
   border-style: none;
+  transition:all ease-in-out .2s;
+}
+button:hover{
+  filter: opacity(.8);
 }
 
 h2{font-size:1.75rem}

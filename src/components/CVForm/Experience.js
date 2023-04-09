@@ -2,12 +2,14 @@ import ExperienceItem from './ExperienceItem';
 import Section from '../Utils/Section';
 import Button from '../Utils/Button';
 
+// Experience input section
 const ExperienceInput = ({
   experienceInfo,
   onChangeExperience,
   onAddExperience,
   onDeleteExperience,
 }) => {
+  // Create experience items from each cv.experience item
   const experienceItems = experienceInfo.map((experienceItem) => (
     <ExperienceItem
       experienceItem={experienceItem}
@@ -18,12 +20,16 @@ const ExperienceInput = ({
     />
   ));
   return (
+    // Section
     <Section title='Experience'>
+      {/* Children */}
       {experienceItems}
+
+      {/* Add new experience inputs */}
       <Button
-        text='Add'
+        text='Add Experience'
         onClickAction={onAddExperience}
-        color={'rgb(40, 40, 40)'}
+        color={'rgb(56,144,206)'}
       />
     </Section>
   );

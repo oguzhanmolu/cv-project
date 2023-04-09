@@ -1,9 +1,10 @@
-import styled from 'styled-components';
 import PersonalInput from './Personal';
 import EducationInput from './Education';
 import ExperienceInput from './Experience';
+import styled from 'styled-components';
 import Button from '../Utils/Button';
 
+// CVForm component which renders the left inputs
 const CVForm = ({
   cv,
   onChangePersonal,
@@ -14,32 +15,44 @@ const CVForm = ({
   onAddExperience,
   onDeleteExperience,
   onLoadExampleCV,
+  onResetInputs,
 }) => {
   return (
     <InputWrapper>
+      {/* Personal Input Section */}
       <PersonalInput
         personalInfo={cv.personalInfo}
         onChangePersonal={onChangePersonal}
       />
+      {/* Education Input Section */}
       <EducationInput
         educationInfo={cv.education}
         onChangeEducation={onChangeEducation}
         onAddEducation={onAddEducation}
         onDeleteEducation={onDeleteEducation}
       />
+      {/* Experience Input Section */}
       <ExperienceInput
         experienceInfo={cv.experience}
         onChangeExperience={onChangeExperience}
         onAddExperience={onAddExperience}
         onDeleteExperience={onDeleteExperience}
       />
+
+      {/* Load Example Button */}
       <ButtonWrapper>
         <Button
           text='Load Example CV'
-          color='green'
+          color='rgb(222, 49, 99)'
           onClickAction={onLoadExampleCV}
         />
-        <Button text='Generate PDF' color='#8B0000' />
+
+        {/* Reset Button */}
+        <Button
+          text='Reset'
+          color='rgb(56,144,206)'
+          onClickAction={onResetInputs}
+        />
       </ButtonWrapper>
     </InputWrapper>
   );

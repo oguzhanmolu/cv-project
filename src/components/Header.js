@@ -1,7 +1,7 @@
-import React from 'react';
 import styled from 'styled-components';
 import cvIcon from '../assets/cv-icon.png';
 
+// Header
 const Header = () => {
   return (
     <HeaderWrapper>

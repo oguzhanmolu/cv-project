@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+// Create education item section from props
 const EducationItem = ({ educationItem }) => {
   return (
     <>

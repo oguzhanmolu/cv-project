@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
 import Section from '../Utils/Section';
 
-const PersonalInput = ({ onChangePersonal }) => {
+// Personal Input section
+const PersonalInput = ({ personalInfo, onChangePersonal }) => {
   return (
     <Section title='Personal'>
       <input
@@ -9,6 +9,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         name='name'
         type='text'
         placeholder='Name'
+        value={personalInfo.name}
       ></input>
 
       <input
@@ -16,6 +17,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         name='title'
         type='text'
         placeholder='Title'
+        value={personalInfo.title}
       ></input>
 
       <input
@@ -23,6 +25,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         name='phone'
         type='text'
         placeholder='Phone'
+        value={personalInfo.phone}
       ></input>
 
       <input
@@ -30,6 +33,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         name='email'
         type='text'
         placeholder='Email'
+        value={personalInfo.email}
       ></input>
 
       <input
@@ -37,6 +41,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         name='address'
         type='text'
         placeholder='Address'
+        value={personalInfo.address}
       ></input>
 
       <textarea
@@ -47,6 +52,7 @@ const PersonalInput = ({ onChangePersonal }) => {
         rows={5}
         maxLength='300'
         placeholder='Description...'
+        value={personalInfo.description}
       />
 
       <input

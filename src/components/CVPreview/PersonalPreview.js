@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import PreviewTitle from '../Utils/PreviewTitle';
 
+// Personal preview contents
 const PersonalPreview = ({ personalInfo }) => {
   return (
     <>

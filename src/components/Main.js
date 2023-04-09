@@ -1,37 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
 import CVForm from './CVForm/CVForm';
 import CVPreview from './CVPreview/CVPreview';
-import { v4 as uuidv4 } from 'uuid';
 import emptyCV from './Utils/EmptyCV';
 import exampleCV from './Utils/exampleCV';
+import styled from 'styled-components';
+import { v4 as uuidv4 } from 'uuid';
 
 const Main = () => {
+  // Hook
   const [cv, setCV] = useState(emptyCV);
-
-  useEffect(() => {
-    console.log(cv);
-  });
 
   // Update cv state with personal inputs
   const handleChangePersonal = (e) => {
     const { name, value, type } = e.target;
 
+    // If input is file
     if (type === 'file') {
       handlePhotoUpload(e);
       return;
     }
 
+    // Set
     setCV((prevState) => ({
       ...prevState,
       personalInfo: { ...prevState.personalInfo, [name]: value },
     }));
   };
 
-  // Photo upload
+  // Handle photo upload
   const handlePhotoUpload = (e) => {
     const { name } = e.target;
     const file = e.target.files[0];
+
     if (!file) return;
 
     const reader = new FileReader();
@@ -61,7 +61,7 @@ const Main = () => {
     });
   };
 
-  // Add education input section
+  // Add new education input section
   const handleAddEducation = () => {
     setCV((prevState) => ({
       ...prevState,
@@ -105,7 +105,7 @@ const Main = () => {
     });
   };
 
-  // Add experience input section
+  // Add new experience input section
   const handleAddExperience = () => {
     setCV((prevState) => ({
       ...prevState,
@@ -127,9 +127,14 @@ const Main = () => {
   };
 
   // Load example CV
-  const loadExampleCV = () => setCV(exampleCV);
+  const handleLoadExampleCV = () => setCV(exampleCV);
+
+  // Reset Inputs
+  const handleResetInputs = () => setCV(emptyCV);
+
   return (
     <MainWrapper>
+      {/* CV inputs (left side) */}
       <InputWrapper>
         <CVForm
           cv={cv}
@@ -140,9 +145,12 @@ const Main = () => {
           onChangeExperience={handleChangeExperience}
           onAddExperience={handleAddExperience}
           onDeleteExperience={handleDeleteExperience}
-          onLoadExampleCV={loadExampleCV}
+          onLoadExampleCV={handleLoadExampleCV}
+          onResetInputs={handleResetInputs}
         />
       </InputWrapper>
+
+      {/* CV preview contents (right side) */}
       <ContentWrapper>
         <CVPreview cv={cv} />
       </ContentWrapper>
@@ -170,9 +178,9 @@ const InputWrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  position: sticky;
   top: 0;
-  height: 100vh;
+  position: sticky;
+  min-height: 1100px;
   width: 900px;
   margin: 50px 25px 50px 25px;
   padding: 1rem;

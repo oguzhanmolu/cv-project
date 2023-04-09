@@ -1,6 +1,6 @@
-import { Children } from 'react';
 import styled from 'styled-components';
 
+// Section with title and children props
 const Section = ({ title, children }) => {
   return (
     <SectionWrapper>

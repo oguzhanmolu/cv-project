@@ -1,7 +1,9 @@
 import EducationItem from './EducationItem';
 import PreviewTitle from '../Utils/PreviewTitle';
 
+//
 const EducationPreview = ({ educationInfo }) => {
+  // Create education preview items from each cv.education item
   const educationItems = educationInfo.map((educationItem) => (
     <EducationItem
       key={educationItem.id}
@@ -11,7 +13,10 @@ const EducationPreview = ({ educationInfo }) => {
   ));
   return (
     <>
+      {/* Section Title */}
       <PreviewTitle title='Education' />
+
+      {/* Children */}
       {educationItems}
     </>
   );

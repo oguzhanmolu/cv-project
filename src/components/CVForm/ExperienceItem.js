@@ -1,5 +1,6 @@
 import Button from '../Utils/Button';
 
+// Create Experience item section from props
 const ExperienceItem = ({
   id,
   experienceItem,
